@@ -1,741 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guiv Farmanfarmaian | ML Research & Engineering</title>
+    <title>Your Name | ML Research & Engineering</title>
     <meta
       name="description"
-      content="Personal website for Guiv Farmanfarmaian, focused on machine learning research and engineering."
+      content="Personal website for an ETH Zurich AI master's student interested in ML research and ML engineering."
     />
-    <meta name="theme-color" content="#0f172a" />
-    <style>
-      :root {
-        --bg: #f6f8fc;
-        --bg-2: #eef2ff;
-        --surface: rgba(255, 255, 255, 0.82);
-        --surface-strong: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --line: rgba(15, 23, 42, 0.09);
-        --accent: #1d4ed8;
-        --accent-2: #7c3aed;
-        --shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
-        --radius: 24px;
-        --max: 1120px;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(124, 58, 237, 0.10), transparent 28%),
-          radial-gradient(circle at top right, rgba(29, 78, 216, 0.10), transparent 26%),
-          linear-gradient(180deg, var(--bg), var(--bg-2));
-        line-height: 1.65;
-      }
-
-      a { color: inherit; }
-      img { max-width: 100%; display: block; }
-
-      .container {
-        width: min(100% - 2rem, var(--max));
-        margin: 0 auto;
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(14px);
-        background: rgba(246, 248, 252, 0.75);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .header-inner {
-        min-height: 76px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.85rem;
-        text-decoration: none;
-        font-weight: 800;
-      }
-
-      .brand-mark {
-        width: 2.5rem;
-        height: 2.5rem;
-        display: grid;
-        place-items: center;
-        border-radius: 16px;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: white;
-        box-shadow: var(--shadow);
-      }
-
-      .nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .nav a {
-        text-decoration: none;
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .nav a:hover { color: var(--text); }
-
-      .hero {
-        padding: 5.5rem 0 3rem;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.4fr 0.9fr;
-        gap: 1.5rem;
-        align-items: stretch;
-      }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .hero-copy,
-      .side-card,
-      .section-card,
-      .project-card,
-      .timeline-card,
-      .contact-card {
-        padding: 1.6rem;
-      }
-
-      .eyebrow,
-      .section-kicker {
-        margin: 0 0 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.78rem;
-        color: var(--accent);
-        font-weight: 800;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(2.4rem, 5vw, 4.35rem);
-        line-height: 1.02;
-        letter-spacing: -0.04em;
-      }
-
-      h2 {
-        margin: 0 0 0.8rem;
-        font-size: clamp(1.6rem, 3vw, 2.4rem);
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-      }
-
-      h3 {
-        margin: 0 0 0.8rem;
-        font-size: 1.1rem;
-      }
-
-      p { margin: 0; }
-
-      .hero-tagline {
-        margin-top: 1.1rem;
-        font-size: 1.18rem;
-        color: var(--text);
-      }
-
-      .hero-summary {
-        margin-top: 1rem;
-        color: var(--muted);
-        max-width: 64ch;
-      }
-
-      .button-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        margin-top: 1.4rem;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.82rem 1.12rem;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 700;
-        border: 1px solid transparent;
-      }
-
-      .button--primary {
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: white;
-      }
-
-      .button--ghost {
-        background: rgba(255,255,255,0.7);
-        border-color: var(--line);
-        color: var(--text);
-      }
-
-      .meta-list,
-      .clean-list {
-        margin: 1.2rem 0 0;
-        padding-left: 1.1rem;
-        color: var(--muted);
-      }
-
-      .meta-list li,
-      .clean-list li { margin: 0.45rem 0; }
-
-      .profile-fallback {
-        width: 5.6rem;
-        height: 5.6rem;
-        border-radius: 22px;
-        display: grid;
-        place-items: center;
-        font-size: 1.7rem;
-        font-weight: 800;
-        color: white;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        margin-bottom: 1.2rem;
-      }
-
-      .muted { color: var(--muted); }
-
-      .mini-grid,
-      .info-grid,
-      .about-grid,
-      .projects-grid,
-      .research-grid,
-      .contact-grid {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; }
-      .info-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 1.25rem; }
-      .about-grid { grid-template-columns: 1.2fr 0.95fr; }
-      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .research-grid { grid-template-columns: 1fr 1fr; }
-      .contact-grid { grid-template-columns: 1fr 1fr; }
-
-      .mini-stat,
-      .info-card {
-        padding: 1rem 1.1rem;
-        border-radius: 18px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.66);
-      }
-
-      .mini-stat span,
-      .info-card__label {
-        display: block;
-        color: var(--muted);
-        font-size: 0.86rem;
-        margin-bottom: 0.35rem;
-      }
-
-      .info-card__value { font-weight: 800; }
-
-      .section {
-        padding: 2rem 0 0;
-        scroll-margin-top: 92px;
-      }
-
-      .section-head {
-        margin-bottom: 1rem;
-      }
-
-      .tag-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.65rem;
-        margin-top: 1rem;
-      }
-
-      .tag {
-        padding: 0.5rem 0.78rem;
-        border-radius: 999px;
-        font-size: 0.92rem;
-        background: rgba(29, 78, 216, 0.08);
-        color: #1e3a8a;
-        border: 1px solid rgba(29, 78, 216, 0.08);
-      }
-
-      .project-card,
-      .timeline-card,
-      .section-card,
-      .contact-card,
-      .side-card { min-height: 100%; }
-
-      .project-top,
-      .timeline-top,
-      .pub-top {
-        display: flex;
-        gap: 0.75rem;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-
-      .project-category {
-        color: var(--accent);
-        font-weight: 700;
-        font-size: 0.9rem;
-        margin-bottom: 0.6rem;
-      }
-
-      .project-period,
-      .timeline-period,
-      .pub-meta {
-        color: var(--muted);
-        font-size: 0.92rem;
-        white-space: nowrap;
-      }
-
-      .project-summary,
-      .timeline-summary {
-        color: var(--muted);
-        margin-top: 0.8rem;
-      }
-
-      .divider {
-        height: 1px;
-        background: var(--line);
-        margin: 1.25rem 0;
-      }
-
-      .stack {
-        display: grid;
-        gap: 0.85rem;
-      }
-
-      .stack-item {
-        padding: 0.95rem 1rem;
-        border-radius: 18px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.68);
-      }
-
-      .timeline {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .contact-list {
-        display: grid;
-        gap: 0.8rem;
-        margin-top: 1rem;
-      }
-
-      .contact-link {
-        text-decoration: none;
-        padding: 0.95rem 1rem;
-        border-radius: 18px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.68);
-        font-weight: 700;
-      }
-
-      .footer {
-        padding: 2.5rem 0 3rem;
-        color: var(--muted);
-      }
-
-      @media (max-width: 960px) {
-        .hero-grid,
-        .about-grid,
-        .projects-grid,
-        .research-grid,
-        .contact-grid,
-        .info-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .header-inner {
-          align-items: flex-start;
-          flex-direction: column;
-          padding: 0.9rem 0;
-        }
-
-        .nav {
-          gap: 0.75rem;
-        }
-
-        .hero {
-          padding-top: 3.2rem;
-        }
-
-        .mini-grid { grid-template-columns: 1fr; }
-      }
-    </style>
+    <meta name="theme-color" content="#f4f7fb" />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="site-data.js"></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+    <div class="page-grid" aria-hidden="true"></div>
+
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top">
-          <span class="brand-mark">GF</span>
-          <span>Guiv Farmanfarmaian</span>
+        <a href="#top" class="brand" aria-label="Homepage">
+          <span class="brand-mark" id="brand-mark">YN</span>
+          <span class="brand-text" id="brand-text">Your Name</span>
         </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#research">Research</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </nav>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-wrap"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-wrap" id="nav-wrap">
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#notes">Notes</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="header-actions">
+            <button
+              class="icon-button"
+              id="theme-toggle"
+              type="button"
+              aria-label="Toggle theme"
+              title="Toggle theme"
+            >
+              <span aria-hidden="true">◐</span>
+            </button>
+            <a class="button button--ghost header-cv-link" id="header-cv-link" href="#"
+              >CV</a
+            >
+          </div>
+        </div>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
+    <main id="main">
+      <section class="hero section" id="top">
         <div class="container hero-grid">
-          <div class="card hero-copy">
-            <p class="eyebrow">ETH Zurich · MSc CS (AI) · ML Research &amp; Engineering</p>
-            <h1>Guiv Farmanfarmaian</h1>
-            <p class="hero-tagline">
-              I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.
+          <div class="hero-copy reveal">
+            <p class="eyebrow" id="hero-eyebrow">
+              ETH Zurich · AI · ML Research & Engineering
             </p>
-            <p class="hero-summary">
-              My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems through advances in sample-efficient learning, continual learning, and novel model architectures.
+            <h1 id="hero-name">Your Name</h1>
+            <p class="hero-tagline" id="hero-tagline">
+              Master's student in AI with a mathematics background, building toward ML research and research engineering.
             </p>
-            <div class="button-row">
-              <a class="button button--primary" href="https://github.com/guivff" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="button button--ghost" href="mailto:guivff@gmail.com">Email</a>
-            </div>
-            <ul class="meta-list">
-              <li>MSc Computer Science from ETH Zurich</li>
-              <li>BSc Mathematics from ETH Zurich</li>
-              <li>Open to full-time ML research or ML engineering roles</li>
-            </ul>
+            <p class="hero-summary" id="hero-summary">
+              I like working across theory, experiments, and engineering — from designing models and evaluations to building reliable ML systems.
+            </p>
+
+            <div class="hero-links" id="hero-links"></div>
+            <ul class="hero-meta" id="hero-meta"></ul>
           </div>
 
-          <aside class="card side-card">
-            <div class="profile-fallback">GF</div>
-            <h2>Current focus</h2>
-            <p class="muted">
-              Reasoning in language models, especially through RL post-training, test-time recursion, and methods that recover learning signal on hard tasks.
-            </p>
-            <div class="mini-grid">
+          <aside class="hero-panel card reveal">
+            <div class="profile-shell" id="profile-shell">
+              <img
+                id="profile-image"
+                class="profile-image"
+                alt="Profile photo"
+                hidden
+              />
+              <div class="profile-fallback" id="profile-fallback">YN</div>
+            </div>
+
+            <div class="spotlight">
+              <h2>Current focus</h2>
+              <p id="focus-summary">
+                Researching reasoning in language models and building stronger learning signals for difficult problems.
+              </p>
+            </div>
+
+            <div class="mini-stats">
               <div class="mini-stat">
-                <span>Status</span>
-                <strong>Open to full-time roles</strong>
+                <span class="mini-stat__label">Status</span>
+                <strong id="availability-text">Open to roles</strong>
               </div>
               <div class="mini-stat">
-                <span>Based in</span>
-                <strong>Zurich, Switzerland</strong>
+                <span class="mini-stat__label">Based in</span>
+                <strong id="location-text">Zurich, Switzerland</strong>
               </div>
             </div>
-            <div class="tag-row">
-              <span class="tag">LLM reasoning</span>
-              <span class="tag">Reinforcement learning</span>
-              <span class="tag">RL post-training</span>
-              <span class="tag">Continual learning</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">ML systems</span>
-            </div>
+
+            <div class="tag-row" id="focus-tags"></div>
           </aside>
         </div>
+      </section>
 
-        <div class="container info-grid">
-          <div class="info-card">
-            <span class="info-card__label">Education</span>
-            <div class="info-card__value">ETH Zurich · MSc CS (AI)</div>
-          </div>
-          <div class="info-card">
-            <span class="info-card__label">Background</span>
-            <div class="info-card__value">BSc Mathematics</div>
-          </div>
-          <div class="info-card">
-            <span class="info-card__label">Current thesis</span>
-            <div class="info-card__value">Improving LLM Reasoning</div>
-          </div>
-          <div class="info-card">
-            <span class="info-card__label">Target roles</span>
-            <div class="info-card__value">ML Research · Research Engineer · ML Engineer</div>
-          </div>
+      <section class="section section--compact">
+        <div class="container">
+          <div class="highlights-grid" id="highlights-grid"></div>
         </div>
       </section>
 
       <section class="section" id="about">
         <div class="container">
-          <div class="section-head">
+          <div class="section-heading reveal">
             <p class="section-kicker">About</p>
             <h2>Mathematical thinking + practical ML building</h2>
           </div>
+
           <div class="about-grid">
-            <div class="card section-card">
-              <p>
-                I am a Master’s student in Computer Science at ETH Zurich, specializing in Machine Intelligence, with a prior Bachelor’s degree in Mathematics. I am most interested in machine learning problems that combine rigorous ideas with strong empirical work.
-              </p>
-              <div class="divider"></div>
-              <p>
-                My current work focuses on improving LLM reasoning on challenging problems. More broadly, I am interested in reinforcement learning, reasoning, sample-efficient learning, test-time compute, continual learning, and model evaluation.
-              </p>
-              <div class="divider"></div>
-              <p>
-                I am looking for roles where I can contribute both as a researcher and as a builder: designing experiments, implementing training pipelines, evaluating models carefully, and turning ideas into working systems.
-              </p>
-            </div>
-            <div class="card section-card">
+            <article class="card reveal">
+              <div class="stacked-copy" id="about-copy"></div>
+            </article>
+
+            <aside class="card reveal">
               <h3>Core interests</h3>
-              <div class="tag-row">
-                <span class="tag">LLM reasoning</span>
-                <span class="tag">Reinforcement learning</span>
-                <span class="tag">Test-time inference</span>
-                <span class="tag">Sample-efficient learning</span>
-                <span class="tag">Continual learning</span>
-                <span class="tag">Graph learning</span>
-                <span class="tag">Evaluation and ablations</span>
-                <span class="tag">ML systems</span>
-              </div>
+              <div class="tag-row tag-row--large" id="interests-list"></div>
+
               <div class="divider"></div>
+
               <h3>What I want to work on</h3>
-              <ul class="clean-list">
-                <li>Research engineer roles combining strong experiments with real implementation.</li>
-                <li>ML engineer roles with meaningful modeling depth rather than only product integration.</li>
-                <li>Applied scientist or early-career research roles in reasoning, RL, LLMs, or learning algorithms.</li>
-                <li>Work that connects ideas and systems: training, evaluation, benchmarking, and robust experimentation.</li>
-              </ul>
-            </div>
+              <ul class="clean-list" id="goals-list"></ul>
+            </aside>
           </div>
         </div>
       </section>
 
       <section class="section" id="projects">
         <div class="container">
-          <div class="section-head">
+          <div class="section-heading reveal">
             <p class="section-kicker">Selected projects</p>
             <h2>Research credibility with engineering depth</h2>
           </div>
-          <div class="projects-grid">
-            <article class="card project-card">
-              <div class="project-category">Research project · ongoing thesis work</div>
-              <div class="project-top">
-                <h3>Mitigating Entropy Collapse in RL</h3>
-                <span class="project-period">2025 – Present</span>
-              </div>
-              <p class="project-summary">
-                Studying collapse and diversity loss in GRPO-based RL post-training for mathematical reasoning. I am designing and evaluating training interventions such as teacher-hint conditioning to stabilize learning on hard problems while preserving useful exploration.
-              </p>
-              <div class="tag-row">
-                <span class="tag">RLVR</span><span class="tag">GRPO</span><span class="tag">LLMs</span><span class="tag">Math reasoning</span><span class="tag">Ablations</span>
-              </div>
-            </article>
-
-            <article class="card project-card">
-              <div class="project-category">Research project · ongoing thesis work</div>
-              <div class="project-top">
-                <h3>RL for Hard Problems with Near-Zero Reward</h3>
-                <span class="project-period">2025 – Present</span>
-              </div>
-              <p class="project-summary">
-                Investigating how to recover learning signal when standard RL produces almost no reward on very difficult reasoning tasks. Current work explores teacher hints and minimal solution prefixes to make hard examples learnable instead of simply uninformative.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Sparse reward</span><span class="tag">Reasoning</span><span class="tag">Sample efficiency</span>
-              </div>
-            </article>
-
-            <article class="card project-card">
-              <div class="project-category">Research project · ongoing thesis work</div>
-              <div class="project-top">
-                <h3>Test-Time Inference for Mathematical Reasoning</h3>
-                <span class="project-period">2025 – Present</span>
-              </div>
-              <p class="project-summary">
-                Evaluating recursive reasoning, refinement, and compute-allocation strategies at inference time for difficult math benchmarks, with a focus on understanding when extra inference compute materially improves reasoning quality.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Test-time compute</span><span class="tag">Reasoning</span><span class="tag">Evaluation</span>
-              </div>
-            </article>
-
-            <article class="card project-card">
-              <div class="project-category">Semester thesis</div>
-              <div class="project-top">
-                <h3>Improving Investment Strategies with GNNs</h3>
-                <span class="project-period">2024</span>
-              </div>
-              <p class="project-summary">
-                Worked on large directed supply-chain graphs to study node feature prediction, link prediction, and downstream portfolio performance. The project compared graph-based methods against strong non-graph baselines and studied when graph structure actually helps in financial prediction tasks.
-              </p>
-              <div class="tag-row">
-                <span class="tag">GNNs</span><span class="tag">Graph Transformers</span><span class="tag">Finance</span><span class="tag">PyTorch Geometric</span>
-              </div>
-            </article>
-
-            <article class="card project-card">
-              <div class="project-category">Course project</div>
-              <div class="project-top">
-                <h3>Task Sequencing in Continual Learning</h3>
-                <span class="project-period">2024</span>
-              </div>
-              <p class="project-summary">
-                Studied how the order of tasks affects continual learning performance, with experiments on sequence selection, forgetting, and transfer. The work focused on turning task ordering into a measurable algorithmic variable rather than a background implementation detail.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Continual learning</span><span class="tag">Avalanche</span><span class="tag">CIFAR</span>
-              </div>
-            </article>
-
-            <article class="card project-card">
-              <div class="project-category">Course project</div>
-              <div class="project-top">
-                <h3>Text Sentiment Classification with BERTweet</h3>
-                <span class="project-period">2024</span>
-              </div>
-              <p class="project-summary">
-                Built a high-performing sentiment classifier for noisy Twitter text using tweet-specific preprocessing, fine-tuning of BERT-family backbones, custom heads, and careful ablations over architectural choices.
-              </p>
-              <div class="tag-row">
-                <span class="tag">NLP</span><span class="tag">BERTweet</span><span class="tag">PyTorch</span>
-              </div>
-            </article>
-          </div>
+          <div class="project-grid" id="project-grid"></div>
         </div>
       </section>
 
       <section class="section" id="research">
-        <div class="container">
-          <div class="section-head">
+        <div class="container research-grid">
+          <article class="card reveal">
             <p class="section-kicker">Research</p>
-            <h2>Thesis, publications, and active directions</h2>
-          </div>
-          <div class="research-grid">
-            <div class="card section-card">
-              <h3>Master’s Thesis — Improving LLM Reasoning on Challenging Problems</h3>
-              <p class="muted">
-                My current thesis at ETH Zurich studies how to improve reasoning performance on hard problems using RL post-training and test-time inference. A central theme is how to recover or strengthen learning signals on difficult tasks while preserving robustness and diversity.
-              </p>
-              <ul class="clean-list">
-                <li>Studying RL post-training for math reasoning with GRPO-based RLVR.</li>
-                <li>Exploring teacher-hint conditioning and minimal-solution-prefix methods to recover learning signal on hard problems.</li>
-                <li>Evaluating recursive reasoning and refinement methods for challenging reasoning benchmarks.</li>
-              </ul>
-            </div>
-            <div class="card section-card">
-              <h3>Selected write-ups</h3>
-              <div class="stack">
-                <div class="stack-item">
-                  <div class="pub-top">
-                    <strong>Task Sequencing in Continual Learning</strong>
-                    <span class="pub-meta">Project report · 2024</span>
-                  </div>
-                </div>
-                <div class="stack-item">
-                  <div class="pub-top">
-                    <strong>Text Sentiment Classification with BERTweet and Custom Heads</strong>
-                    <span class="pub-meta">Project report · 2024</span>
-                  </div>
-                </div>
-                <div class="stack-item">
-                  <div class="pub-top">
-                    <strong>Human Motion Prediction with Attention-Augmented GCNs</strong>
-                    <span class="pub-meta">Project report · 2024</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <h2 id="thesis-title">Thesis</h2>
+            <p class="section-paragraph" id="thesis-summary"></p>
+            <ul class="clean-list" id="thesis-bullets"></ul>
+          </article>
+
+          <aside class="card reveal">
+            <p class="section-kicker">Selected write-ups</p>
+            <div class="publication-list" id="publication-list"></div>
+          </aside>
         </div>
       </section>
 
       <section class="section" id="experience">
         <div class="container">
-          <div class="section-head">
+          <div class="section-heading reveal">
             <p class="section-kicker">Experience</p>
             <h2>Research and teaching</h2>
           </div>
-          <div class="timeline">
-            <div class="card timeline-card">
-              <div class="timeline-top">
-                <h3>Master’s Thesis Researcher — ETH Zurich</h3>
-                <span class="timeline-period">2025 – Present</span>
-              </div>
-              <p class="timeline-summary">
-                Researching RL post-training and test-time inference methods for mathematical reasoning.
-              </p>
-              <ul class="clean-list">
-                <li>Investigating collapse prevention in GRPO-based RL for hard reasoning tasks.</li>
-                <li>Recovering RL signal on near-zero-reward problems with teacher hints and minimal solution prefixes.</li>
-                <li>Evaluating recursive reasoning and refinement methods on difficult math benchmarks.</li>
-              </ul>
-            </div>
+          <div class="timeline" id="experience-list"></div>
+        </div>
+      </section>
 
-            <div class="card timeline-card">
-              <div class="timeline-top">
-                <h3>Semester Thesis Researcher — ETH Zurich × leading investment firm</h3>
-                <span class="timeline-period">2024</span>
-              </div>
-              <p class="timeline-summary">
-                Worked on graph learning for portfolio-relevant metrics using large directed supply-chain graphs.
-              </p>
-              <ul class="clean-list">
-                <li>Built and evaluated GNN and Graph Transformer models on a large directed graph.</li>
-                <li>Ran ablations and baseline comparisons on financial prediction and downstream portfolio metrics.</li>
-              </ul>
-            </div>
-
-            <div class="card timeline-card">
-              <div class="timeline-top">
-                <h3>Teaching Assistant, Computational Intelligence Lab (CIL) — ETH Zurich</h3>
-                <span class="timeline-period">Feb 2025 – Jun 2025</span>
-              </div>
-              <p class="timeline-summary">
-                Supported teaching in machine learning coursework at ETH Zurich.
-              </p>
-              <ul class="clean-list">
-                <li>Helped students with technically demanding machine learning material.</li>
-                <li>Supported the course through teaching and guidance.</li>
-              </ul>
-            </div>
+      <section class="section" id="notes">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Notes</p>
+            <h2>Reading notes, essays, and short write-ups</h2>
           </div>
+          <div class="notes-grid" id="notes-grid"></div>
+          <p class="empty-state reveal" id="notes-empty" hidden>
+            No notes yet. Add items in <code>site-data.js</code> when you want this section to appear.
+          </p>
         </div>
       </section>
 
       <section class="section" id="contact">
         <div class="container contact-grid">
-          <div class="card contact-card">
+          <article class="card reveal">
             <p class="section-kicker">Contact</p>
             <h2>Get in touch</h2>
-            <p class="muted">
-              I’m interested in ML research, research engineering, and ML engineering roles, especially where strong experimentation and implementation both matter.
-            </p>
-          </div>
-          <div class="card contact-card">
-            <h3>Links</h3>
-            <div class="contact-list">
-              <a class="contact-link" href="mailto:guivff@gmail.com">guivff@gmail.com</a>
-              <a class="contact-link" href="https://github.com/guivff" target="_blank" rel="noreferrer">github.com/guivff</a>
-            </div>
-          </div>
+            <p class="section-paragraph" id="contact-copy"></p>
+          </article>
+
+          <aside class="card reveal">
+            <div class="contact-links" id="contact-links"></div>
+          </aside>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">© Guiv Farmanfarmaian</div>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p id="footer-text">© Your Name</p>
+        <p id="footer-note"></p>
+      </div>
     </footer>
   </body>
 </html>
