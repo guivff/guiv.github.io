@@ -20,11 +20,11 @@ window.siteData = {
       "BSc Mathematics from ETH Zurich",
       "Open to full-time ML research or ML engineering roles"
     ],
-    profileImage: ""
+    profileImage: "/guiv.github.io/assets/guivff_pic.jpg"
   },
 
   links: [
-    { label: "CV", href: "assets/GuivFF_CV.pdf", style: "primary" },
+    { label: "CV", href: ""/guiv.github.io/assets/GuivFF_CV.pdf", style: "primary" },
     { label: "GitHub", href: "https://github.com/guivff", style: "ghost" },
     { label: "Email", href: "mailto:guivff@gmail.com", style: "ghost" }
   ],
@@ -111,7 +111,7 @@ window.siteData = {
   tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
   featured: false,
   links: [
-    { label: "Report", href: "assets/reports/task_ordering_report.pdf" },
+    { label: "Report", href: "/guiv.github.io/assets/reports/task_ordering_report.pdf" },
     { label: "Code", href: "#" }
   ]
 },
@@ -123,7 +123,7 @@ window.siteData = {
   tags: ["NLP", "Transformers", "BERTweet", "PyTorch"],
   featured: false,
   links: [
-    { label: "Report", href: "assets/reports/twitter_sentiment_report.pdf" },
+    { label: "Report", href: "/guiv.github.io/assets/reports/twitter_sentiment_report.pdf" },
     { label: "Code", href: "#" }
   ]
 },
@@ -136,7 +136,7 @@ window.siteData = {
   featured: false,
   links: [
     { label: "Approach", href: "assets/slides/genomics-approach-slides.pptx" },
-    { label: "Assignment", href: "assets/reports/genomics_assignment.pdf" },
+    { label: "Assignment", href: "/guiv.github.io/assets/reports/genomics_assignment.pdf" },
     { label: "Code", href: "#" }
   ]
 },
@@ -148,7 +148,7 @@ window.siteData = {
   tags: ["Computer Vision", "Motion Prediction", "GCN", "AMASS"],
   featured: false,
   links: [
-    { label: "Report", href: "assets/reports/motion_prediction_report.pdf" },
+    { label: "Report", href: "/guiv.github.io/assets/reports/motion_prediction_report.pdf" },
     { label: "Code", href: "#" }
   ]
 },
@@ -168,19 +168,19 @@ window.siteData = {
         title: "Task Sequencing in Continual Learning",
         venue: "Project report",
         year: "2024",
-        href: "assets/reports/task-ordering-report.pdf"
+        href: "/guiv.github.io/assets/reports/task-ordering-report.pdf"
       },
       {
         title: "Text Sentiment Classification with BERTweet and Custom Heads",
         venue: "Project report",
         year: "2024",
-        href: "assets/reports/twitter-sentiment-report.pdf"
+        href: "/guiv.github.io/assets/reports/twitter-sentiment-report.pdf"
       },
       {
         title: "Human Motion Prediction with Attention-Augmented GCNs",
         venue: "Project report",
         year: "2024",
-        href: "assets/reports/motion-prediction-report.pdf"
+        href: "/guiv.github.io/assets/reports/motion-prediction-report.pdf"
       }
     ]
   },
