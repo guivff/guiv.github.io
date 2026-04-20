@@ -517,7 +517,7 @@ html[data-theme="light"] .page-grid {
   justify-content: flex-start;
 }
 
-.profile-image:"",
+.profile-image:,
 .profile-fallback {
   width: 92px;
   height: 92px;
