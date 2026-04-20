@@ -107,14 +107,14 @@
             <div class="spotlight">
               <h2>Current focus</h2>
               <p id="focus-summary">
-                Researching reasoning in language models and building stronger learning signals for difficult problems.
+                Research-heavy engineering in machine learning, including training, evaluation, and reliable deployment.
               </p>
             </div>
 
             <div class="mini-stats">
               <div class="mini-stat">
                 <span class="mini-stat__label">Status</span>
-                <strong id="availability-text">Open to roles</strong>
+                <strong id="availability-text">Open to full-time roles</strong>
               </div>
               <div class="mini-stat">
                 <span class="mini-stat__label">Based in</span>
@@ -122,102 +122,141 @@
               </div>
             </div>
 
-            <div class="tag-row" id="focus-tags"></div>
+            <div class="tag-list" id="focus-tags"></div>
           </aside>
         </div>
       </section>
 
       <section class="section section--compact">
         <div class="container">
-          <div class="highlights-grid" id="highlights-grid"></div>
+          <div class="info-grid" id="highlights-grid"></div>
         </div>
       </section>
 
       <section class="section" id="about">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-head reveal">
             <p class="section-kicker">About</p>
             <h2>Mathematical thinking + practical ML building</h2>
+            <p class="section-lead">
+              A compact overview of background, interests, and the kinds of ML problems I like to work on.
+            </p>
           </div>
 
           <div class="about-grid">
-            <article class="card reveal">
-              <div class="stacked-copy" id="about-copy"></div>
-            </article>
+            <div class="card reveal">
+              <div class="prose" id="about-copy"></div>
+            </div>
 
-            <aside class="card reveal">
-              <h3>Core interests</h3>
-              <div class="tag-row tag-row--large" id="interests-list"></div>
+            <div class="card reveal">
+              <h3 class="card-title">Core interests</h3>
+              <div class="tag-list tag-list--large" id="interest-tags"></div>
 
               <div class="divider"></div>
 
-              <h3>What I want to work on</h3>
-              <ul class="clean-list" id="goals-list"></ul>
-            </aside>
+              <h3 class="card-title">What I want to work on</h3>
+              <ul class="clean-list" id="goal-list"></ul>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="projects">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-head reveal">
             <p class="section-kicker">Selected projects</p>
             <h2>Research credibility with engineering depth</h2>
+            <p class="section-lead">
+              Current research first, followed by selected academic and personal projects with reports, slides, or code where available.
+            </p>
           </div>
-          <div class="project-grid" id="project-grid"></div>
+
+          <div class="projects-group reveal" id="featured-projects-block">
+            <div class="projects-subhead">
+              <h3>Research Projects</h3>
+              <p class="muted">Current, thesis-related, and research-facing work that should be visible first.</p>
+            </div>
+            <div class="card-grid card-grid--featured" id="featured-projects-grid"></div>
+          </div>
+
+          <div class="projects-group reveal" id="other-projects-block">
+            <div class="projects-subhead">
+              <h3>Selected Academic &amp; Personal Projects</h3>
+              <p class="muted">Course and independent projects that still show research depth, modeling breadth, and strong implementation work.</p>
+            </div>
+            <div class="card-grid card-grid--projects" id="other-projects-grid"></div>
+          </div>
         </div>
       </section>
 
       <section class="section" id="research">
-        <div class="container research-grid">
-          <article class="card reveal">
+        <div class="container">
+          <div class="section-head reveal">
             <p class="section-kicker">Research</p>
-            <h2 id="thesis-title">Thesis</h2>
-            <p class="section-paragraph" id="thesis-summary"></p>
-            <ul class="clean-list" id="thesis-bullets"></ul>
-          </article>
+            <h2>Thesis, publications, and active directions</h2>
+            <p class="section-lead">
+              A concise view of ongoing work, thesis directions, and public write-ups.
+            </p>
+          </div>
 
-          <aside class="card reveal">
-            <p class="section-kicker">Selected write-ups</p>
-            <div class="publication-list" id="publication-list"></div>
-          </aside>
+          <div class="research-grid">
+            <div class="card reveal">
+              <h3 class="card-title" id="thesis-title">Master's thesis / current research</h3>
+              <p class="muted" id="thesis-summary">
+                Replace this with a concise thesis description: what question you study, why it matters, and how you approach it.
+              </p>
+              <ul class="clean-list" id="thesis-bullets"></ul>
+            </div>
+
+            <div class="card reveal" id="publications-card">
+              <h3 class="card-title">Selected publications / write-ups</h3>
+              <div class="stack-list" id="publications-list"></div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section" id="experience">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-head reveal">
             <p class="section-kicker">Experience</p>
-            <h2>Research and teaching</h2>
+            <h2>Evidence of how you work</h2>
+            <p class="section-lead">
+              A compact timeline of research, teaching, and industry work.
+            </p>
           </div>
-          <div class="timeline" id="experience-list"></div>
+
+          <div class="timeline" id="experience-timeline"></div>
         </div>
       </section>
 
       <section class="section" id="notes">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-head reveal">
             <p class="section-kicker">Notes</p>
-            <h2>Reading notes, essays, and short write-ups</h2>
+            <h2>Optional writing section</h2>
+            <p class="section-lead">
+              Optional technical notes and short write-ups.
+            </p>
           </div>
-          <div class="notes-grid" id="notes-grid"></div>
-          <p class="empty-state reveal" id="notes-empty" hidden>
-            No notes yet. Add items in <code>site-data.js</code> when you want this section to appear.
-          </p>
+
+          <div class="card-grid" id="notes-grid"></div>
         </div>
       </section>
 
       <section class="section" id="contact">
-        <div class="container contact-grid">
-          <article class="card reveal">
-            <p class="section-kicker">Contact</p>
-            <h2>Get in touch</h2>
-            <p class="section-paragraph" id="contact-copy"></p>
-          </article>
+        <div class="container">
+          <div class="contact-card card reveal">
+            <div>
+              <p class="section-kicker">Contact</p>
+              <h2>Let's talk</h2>
+              <p class="contact-copy" id="contact-copy">
+                I'm interested in ML research, research engineer, applied scientist, and ML engineer roles.
+              </p>
+            </div>
 
-          <aside class="card reveal">
-            <div class="contact-links" id="contact-links"></div>
-          </aside>
+            <div class="hero-links" id="contact-links"></div>
+          </div>
         </div>
       </section>
     </main>
@@ -225,7 +264,9 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p id="footer-text">© Your Name</p>
-        <p id="footer-note"></p>
+        <p class="footer-note">
+          Built with plain HTML, CSS, and JavaScript for easy GitHub Pages deployment.
+        </p>
       </div>
     </footer>
   </body>

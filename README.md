@@ -1,6 +1,3 @@
-# guiv.github.io
-
-Project site for Guiv Farmanfarmaian.
 
 ## Local preview
 
@@ -18,10 +15,3 @@ Then open:
 http://localhost:8000
 ```
 
-## GitHub Pages
-
-This repository is configured as a project site and should publish at:
-
-```text
-https://guivff.github.io/guiv.github.io/
-```
