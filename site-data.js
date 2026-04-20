@@ -16,7 +16,7 @@ window.siteData = {
     "Current focus: reasoning in language models, especially through RL post-training, test-time recursion, and methods that recover learning signal on hard tasks.",    location: "Zurich, Switzerland",
     availability: "Open to full-time roles",
     meta: [
-      "MSc Computer Science at ETH Zurich (expected Feb 2026)",
+      "MSc Computer Science from ETH Zurich",
       "BSc Mathematics from ETH Zurich",
       "Open to full-time ML research or ML engineering roles"
     ],
